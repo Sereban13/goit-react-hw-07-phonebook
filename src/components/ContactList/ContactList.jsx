@@ -25,12 +25,7 @@ export const ContactList = () => {
   return (
     <div>
       {isLoading && !error && <b>Request in progress...</b>}
-      {/* {contacts.map(({ name, id, phone }) => (
-        <li key={id}>
-          <span>{name}</span>
-          <span>{phone}</span>
-        </li>
-      ))} */}
+
       {!contacts ? (
         <p>you do not have any contact</p>
       ) : (

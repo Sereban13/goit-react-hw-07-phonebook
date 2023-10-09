@@ -20,12 +20,12 @@ export const ContactForm = () => {
   const contacts = useSelector(getContacts);
 
   const handleSubmit = (values, actions) => {
-    const { name } = values;
+    // const { name } = values;
     const isExistName = contacts.find(
-      contact => contact.name.toLowerCase() === name.toLowerCase()
+      contact => contact.name.toLowerCase() === values.name.toLowerCase()
     );
     if (isExistName) {
-      alert(`Contact "${name}" is already exist`);
+      alert(`Contact "${values.name}" is already exist`);
       actions.resetForm();
       return;
     }
