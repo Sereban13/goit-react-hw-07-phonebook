@@ -14,7 +14,14 @@ export const App = () => {
   const error = useSelector(getError);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    const fetchPhoneBook = async () => {
+      try {
+        dispatch(fetchContacts());
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchPhoneBook();
   }, [dispatch]);
 
   return (
